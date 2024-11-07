@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { map, shareReplay, tap } from 'rxjs/operators';
 
 interface User {
   id?: string;
@@ -18,6 +18,11 @@ export class LoginService {
   private userData = new BehaviorSubject<User | null>(null);
   userData$ = this.userData.asObservable();
 
+//new
+  // userData$ = this.userData.asObservable().pipe(shareReplay(1));
+
+
+
   constructor(private http: HttpClient) {
     const storedUser = localStorage.getItem('userData');
     if (storedUser) {
@@ -26,9 +31,19 @@ export class LoginService {
   }
 
   isAuthenticated(): boolean {
-    console.log(this.userData)
+    console.log(this.userData$)
     return !!this.userData.value;
   }
+
+
+//new
+// isAuthenticated(): Observable<boolean> {
+//   return this.userData$.pipe(map((user) => !!user));
+// }
+
+isLoggedIn(): boolean {
+  return this.userData.getValue() !== null;
+}
 
 
   login(username: string, password: string): Observable<User[] | null> {

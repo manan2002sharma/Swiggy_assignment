@@ -8,6 +8,7 @@ import { ResuableRestCardComponent } from '../resuable-rest-card/resuable-rest-c
 import { Router } from '@angular/router';
 import { FavouriteFoodComponent } from '../favourite-food/favourite-food.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 interface Dish {
   name: string;
@@ -30,7 +31,7 @@ interface Restaurant {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,RouterLink,RouterLinkActive,ResuableRestCardComponent,RouterModule,FavouriteFoodComponent,ReactiveFormsModule],
+  imports: [CommonModule,RouterLink,RouterLinkActive,ResuableRestCardComponent,RouterModule,FavouriteFoodComponent,ReactiveFormsModule,NavbarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
