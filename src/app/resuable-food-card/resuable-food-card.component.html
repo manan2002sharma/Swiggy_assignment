@@ -1,0 +1,55 @@
+<div class="max-w-4xl mx-auto bg-white border-b border-gray-200 p-4 flex items-center">
+    <div class="flex-1">
+     <div class="flex items-center mb-2">
+      <div class="border border-green-500 rounded-full w-5 h-5 flex items-center justify-center mr-2">
+       <i class="fas fa-check text-green-500 text-xs">
+       </i>
+      </div>
+      <span class="text-red-500 text-sm font-semibold">
+       Bestseller
+      </span>
+     </div>
+     <h2 class="text-2xl font-bold mb-1">
+      {{name}}
+     </h2>
+     <div class="flex items-center mb-2">
+      <span class="line-through text-gray-500 mr-2">
+       ₹42
+      </span>
+      <span class="text-black text-xl font-bold">
+       {{price}}
+      </span>
+     </div>
+     <div class="flex items-center mb-2">
+      <i class="fas fa-star text-green-500 mr-1">
+      </i>
+      <span class="text-green-500 font-semibold">
+       4.4
+      </span>
+      <span class="text-gray-500 ml-1">
+       (989)
+      </span>
+     </div>
+     <p class="text-gray-700 mb-4">
+      Food description for each food
+     </p>
+     <button (click)="addToFav(name,price)" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-orange-500 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 ">
+        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-orange-500 hover:text-white rounded-md group-hover:bg-opacity-0">
+            Add to favourite
+        </span>
+    </button>
+    
+    </div>
+    <div class="flex-shrink-0">
+     <div class="relative">
+      <img alt="A bowl of poha garnished with pomegranate seeds and a slice of lime" class="w-24 h-24 rounded-lg object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/32Ocr3F63QajB5fpjMsJHneNRjBeBmSqIzFGCs9aeDFJGO3OB.jpg" width="100"/>
+      <button class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-green-500 hover:bg-green-400 text-white font-bold py-1 px-4 rounded-full" (click)="addToCart(name,price)">
+       ADD
+      </button>
+     </div>
+     <p class="text-center text-gray-500 mt-1">
+      Customisable
+     </p>
+    </div>
+
+   </div>

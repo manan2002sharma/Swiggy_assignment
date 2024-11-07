@@ -1,0 +1,25 @@
+<div class="bg-white w-64  overflow-hidden transform hover:scale-95 transition duration-300" (click)="viewDetails()">
+    <img alt="Dish from Adil Hotel" class=" rounded-lg w-full h-40 object-cover" height="200" *ngIf="restaurant"
+    [src]="restaurant.imageSrc" width="300"/>
+    <div class="p-4">
+     <h2 class="text-lg font-bold">
+        {{ restaurant.name }}
+     </h2>
+     <div class="flex items-center text-sm text-gray-600 mb-2">
+      <i class="fas fa-star text-green-500">
+      </i>
+      <span class="ml-1">
+        {{ restaurant.rating }}
+      </span>
+      <span class="mx-2">
+       •
+      </span>
+      <span>
+       40-45 mins
+      </span>
+     </div>
+     <p class="text-sm text-gray-600">
+        {{ restaurant.address }}
+     </p>
+    </div>
+</div>

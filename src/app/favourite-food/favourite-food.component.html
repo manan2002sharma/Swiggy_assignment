@@ -1,0 +1,28 @@
+<div class=" fixed z-50 inset-0 transition-opacity duration-300" >
+    <div class="flex flex-row h-full">
+        <div class="flex-1 bg-opacity-50 bg-orange-500">
+        </div>
+        <div class="flex-1  bg-white  ">
+        
+            <div class="flex justify-between m-10">
+                <span class="text-4xl">
+                    Favourites
+                </span>
+                
+                <button class="h-10 w-10" (click)="onClose()">
+                    <i class="fas fa-times text-xl"></i>
+                </button>   
+            </div>
+            <div  style="height: 900px; overflow-y: auto;">
+                <ul>
+                    <li *ngFor="let item of favItems; let i = index" class=" mx-3 px-3 flex items-center justify-between py-4 border-b hover:bg-orange-500 hover:text-white">
+                          {{ item.itemName }} <br> ${{ item.price }}
+                          <button (click)="removeItem(i)">Remove</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>

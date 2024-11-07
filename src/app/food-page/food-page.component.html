@@ -1,0 +1,15 @@
+
+<div class="container mx-auto mt-6">
+    <h1>
+        {{food$ | async}}
+    </h1>
+    <h1 class="text-2xl font-bold">
+        Restaurants to explore       
+    </h1>
+
+    <div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div *ngFor="let restaurant of filteredRestaurants$ | async" class="pr-3">
+            <app-resuable-rest-card  [restaurant]="restaurant"></app-resuable-rest-card>
+        </div>
+    </div>
+</div>

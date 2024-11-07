@@ -1,0 +1,38 @@
+<div *ngIf="restaurant$ | async as restaurant" class="mx-auto w-1/2">
+<div class="max-w-4xl mx-auto">
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-4">{{ restaurant.name }}</h1>
+    <div class="flex items-center mb-4">
+        <div class="flex items-center text-green-600">
+            <i class="fas fa-star"></i>
+            <span class="ml-1 font-medium">{{ restaurant.rating }}</span>
+            <span class="ml-1 text-gray-500">(4.4K+ ratings)</span>
+        </div>
+        <span class="mx-2 text-gray-500">•</span>
+        <span class="text-gray-700 font-medium">₹250 for two</span>
+    </div>
+    <div class="flex items-center mb-4">
+        <p class="text-red-500 font-medium mr-2">{{ restaurant.review }}</p>
+    </div>
+    <div class="flex items-center mb-4">
+        <span class="text-gray-700 font-medium">Outlet</span>
+        <span class="ml-2 text-gray-500">Madhuban</span>
+        <i class="fas fa-chevron-down ml-2 text-gray-500"></i>
+    </div>
+    <div class="flex items-center mb-4">
+        <i class="fas fa-clock text-gray-500"></i>
+        <span class="ml-2 text-gray-700">25-30 mins</span>
+    </div>
+    <div class="bg-red-50 p-2 rounded-lg text-red-500 font-medium">
+        <i class="fas fa-truck"></i>
+        <span class="ml-2">Free delivery on orders above ₹199</span>
+    </div>
+</div>
+</div>
+
+  
+<h2>Menu</h2>
+<div *ngFor="let dish of restaurant.dishes" class="dish">
+    <app-resuable-food-card [name]="dish.name" [price]="dish.price" [imageSrc]="dish.imagesrc"></app-resuable-food-card>
+</div>
+</div>
