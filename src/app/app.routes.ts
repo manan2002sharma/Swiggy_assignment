@@ -7,6 +7,7 @@ import { authGuard } from './auth.guard';
 import { FoodPageComponent } from './food-page/food-page.component';
 import { RestMenuPageComponent } from './rest-menu-page/rest-menu-page.component';
 import { FavouriteFoodComponent } from './favourite-food/favourite-food.component';
+import { loginResolver } from './login.resolver';
 
 export const routes: Routes = [
     {
@@ -15,6 +16,13 @@ export const routes: Routes = [
     ,
     { path: 'home', component: HomeComponent },
     { path: 'cart', component: CartComponent, canActivate: [authGuard] },
+    // {
+    //     path: 'cart',
+    //     component: CartComponent,
+    //     resolve: {
+    //       loggedIn: loginResolver // Uses the functional resolver to check login status
+    //     }
+    //   },
     {
         path:'',component:HomeComponent
     },{

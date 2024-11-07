@@ -4,12 +4,12 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -26,7 +26,11 @@ export class LoginComponent {
         if (user) {
           console.log('Login successful', user);
           this.loginError = '';
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']).then(() => {
+            window.location.reload();
+          });
+          
+
         } else {
           this.loginError = 'Invalid username or password';
         }

@@ -4,6 +4,7 @@ import { RestaurantService } from '../restaurant.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ResuableFoodCardComponent } from '../resuable-food-card/resuable-food-card.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 interface Dish {
   name: string;
@@ -25,7 +26,7 @@ interface Restaurant {
 @Component({
   selector: 'app-rest-menu-page',
   standalone: true,
-  imports: [CommonModule,ResuableFoodCardComponent],
+  imports: [CommonModule,ResuableFoodCardComponent,NavbarComponent],
   templateUrl: './rest-menu-page.component.html',
   styleUrl: './rest-menu-page.component.css'
 })

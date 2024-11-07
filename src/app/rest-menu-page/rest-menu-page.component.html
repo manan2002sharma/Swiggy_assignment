@@ -1,4 +1,7 @@
-<div *ngIf="restaurant$ | async as restaurant" class="mx-auto w-1/2">
+<app-navbar></app-navbar>
+
+
+<div *ngIf="restaurant$ | async as restaurant" class="mx-auto w-1/2 mt-8">
 <div class="max-w-4xl mx-auto">
 <div class="bg-white p-6 rounded-lg shadow-md">
     <h1 class="text-2xl font-bold mb-4">{{ restaurant.name }}</h1>
@@ -31,7 +34,7 @@
 </div>
 
   
-<h2>Menu</h2>
+<h2 class="text-2xl font-bold mb-4 text-center my-2 text-orange-500">Menu</h2>
 <div *ngFor="let dish of restaurant.dishes" class="dish">
     <app-resuable-food-card [name]="dish.name" [price]="dish.price" [imageSrc]="dish.imagesrc"></app-resuable-food-card>
 </div>

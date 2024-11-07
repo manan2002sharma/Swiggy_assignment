@@ -18,8 +18,6 @@ export class LoginService {
   private userData = new BehaviorSubject<User | null>(null);
   userData$ = this.userData.asObservable();
 
-//new
-  // userData$ = this.userData.asObservable().pipe(shareReplay(1));
 
 
 
@@ -36,10 +34,7 @@ export class LoginService {
   }
 
 
-//new
-// isAuthenticated(): Observable<boolean> {
-//   return this.userData$.pipe(map((user) => !!user));
-// }
+
 
 isLoggedIn(): boolean {
   return this.userData.getValue() !== null;
